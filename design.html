@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World on Monday 23 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1024px; height: 1024px; background: #f8f4ec; font-family: "Liberation Sans", Arial, sans-serif; color: #16130e; }
+  .page { width: 1024px; height: 1024px; padding: 12px 24px 10px 24px; border: 6px solid #16130e; background:
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(120,100,60,.05) 27px 28px),
+    #f8f4ec; display: flex; flex-direction: column; }
+  .chip { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .08em; color: #fff; padding: 2px 7px; border-radius: 3px; }
+  .war { background: #c0392b; } .clim { background: #2e7d32; } .mkt { background: #1565c0; }
+  .pol { background: #6a1b9a; } .dis { background: #e65100; } .sci { background: #00695c; } .spo { background: #5d4037; }
+  /* masthead */
+  .mast { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 4px double #16130e; padding-bottom: 6px; }
+  .mast h1 { font-family: Georgia, "Times New Roman", serif; font-size: 40px; line-height: .95; letter-spacing: .01em; }
+  .mast h1 span { color: #c0392b; }
+  .mast .dateline { text-align: right; font-size: 13px; font-weight: 700; line-height: 1.25; }
+  .mast .dateline b { font-size: 17px; }
+  .subhead { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; letter-spacing: .06em; padding: 4px 0 8px 0; border-bottom: 2px solid #16130e; }
+  /* hero */
+  .hero { display: flex; gap: 14px; margin-top: 9px; height: 204px; }
+  .hero-art { flex: 0 0 470px; background: #ffe9c9; border: 3px solid #16130e; border-radius: 6px; position: relative; overflow: hidden; }
+  .hero-art svg { position: absolute; inset: 0; }
+  .hero-art .stamp { position: absolute; right: 12px; top: 10px; transform: rotate(6deg); border: 3px solid #c0392b; color: #c0392b; font-weight: 800; font-size: 15px; padding: 2px 8px; border-radius: 4px; background: rgba(255,255,255,.75); }
+  .hero-txt { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .hero-txt h2 { font-family: Georgia, serif; font-size: 44px; line-height: 1.0; margin: 5px 0 6px 0; }
+  .hero-txt p { font-size: 14.5px; line-height: 1.35; }
+  .hero-txt .bignum { display: flex; gap: 18px; margin-top: 9px; }
+  .bignum div { background: #16130e; color: #fff; border-radius: 5px; padding: 6px 10px; text-align: center; }
+  .bignum b { font-size: 26px; display: block; line-height: 1; }
+  .bignum span { font-size: 10px; letter-spacing: .05em; }
+  /* second heroes */
+  .duo { display: flex; gap: 14px; margin-top: 9px; height: 112px; }
+  .card { flex: 1; border: 2.5px solid #16130e; border-radius: 6px; padding: 7px 12px; background: #fffdf6; position: relative; }
+  .card h3 { font-family: Georgia, serif; font-size: 20px; line-height: 1.05; margin: 3px 0 4px 0; }
+  .card p { font-size: 12px; line-height: 1.28; }
+  .card .nums { display: flex; gap: 12px; margin-top: 6px; flex-wrap: wrap; }
+  .card .nums div { font-size: 11px; font-weight: 700; line-height: 1.15; white-space: nowrap; }
+  .card .nums b { font-size: 18px; }
+  .up { color: #2e7d32; } .down { color: #c0392b; }
+  /* flow strip */
+  .flow { margin-top: 9px; height: 40px; background: #fff3b0; border: 2.5px dashed #8d6e00; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13.5px; font-weight: 800; }
+  .flow .arr { color: #c0392b; font-size: 18px; }
+  .flow .tag { background: #16130e; color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 3px; }
+  /* mid row */
+  .mid { display: flex; gap: 12px; margin-top: 9px; height: 90px; }
+  .midcard { flex: 1; border: 2px solid #16130e; border-radius: 6px; padding: 7px 10px; background: #fffdf6; }
+  .midcard h4 { font-size: 15.5px; line-height: 1.15; margin: 4px 0 3px 0; font-family: Georgia, serif; }
+  .midcard p { font-size: 11.5px; line-height: 1.3; }
+  .midcard .ico { font-size: 22px; line-height: 1; }
+  /* atlas map */
+  .atlas { margin-top: 9px; height: 124px; border: 2.5px solid #16130e; border-radius: 6px; background: #dceef7; position: relative; overflow: hidden; }
+  .atlas .ttl { position: absolute; left: 10px; top: 6px; font-size: 11px; font-weight: 800; letter-spacing: .08em; background: rgba(255,255,255,.85); padding: 2px 7px; border-radius: 3px; z-index: 2; }
+  .atlas svg { position: absolute; inset: 0; }
+  .atlas .dotlbl { font-size: 10.5px; font-weight: 800; fill: #16130e; }
+  .atlas .dotlbl2 { font-size: 9px; font-weight: 700; fill: #333; }
+  /* briefs */
+  .briefs { margin-top: 9px; height: 214px; }
+  .briefs .bhead { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #16130e; padding-bottom: 3px; }
+  .briefs .bhead b { font-size: 13px; letter-spacing: .06em; }
+  .legend { font-size: 10px; font-weight: 700; }
+  .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin: 0 2px 0 7px; vertical-align: -1px; }
+  .cols { display: flex; gap: 16px; margin-top: 5px; }
+  .col { flex: 1; }
+  .item { display: flex; gap: 6px; align-items: flex-start; font-size: 10.5px; line-height: 1.18; margin-bottom: 3px; }
+  .item .dot { flex: 0 0 9px; width: 9px; height: 9px; border-radius: 50%; margin-top: 3px; }
+  .item b { font-weight: 800; }
+  .foot { margin-top: auto; border-top: 2px solid #16130e; padding-top: 5px; font-size: 10.5px; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="mast">
+    <h1>THE WORLD<br>IN <span>ONE PICTURE</span></h1>
+    <div class="dateline"><b>MONDAY 23 NOVEMBER 2026</b><br>30 STORIES &middot; 7 REGIONS<br>ALL FIRST REPORTED TODAY</div>
+  </div>
+  <div class="subhead"><span>UKRAINE TAKES THE WAR TO LIBYA &middot; MARKETS BOUNCE AFTER THE AI ROUT</span><span>ONE DAY &middot; ONE PAGE &middot; NO YESTERDAY&rsquo;S NEWS</span></div>
+
+  <!-- HERO: Libya strike -->
+  <div class="hero">
+    <div class="hero-art">
+      <svg width="470" height="214" viewBox="0 0 470 214">
+        <rect x="0" y="150" width="470" height="88" fill="#1d6f8e"/>
+        <path d="M0 150 Q60 138 120 150 T240 150 T360 150 T470 150 L470 238 L0 238 Z" fill="#2a8ab0"/>
+        <path d="M0 168 Q80 158 160 168 T320 168 T470 168 L470 238 L0 238 Z" fill="#1d6f8e" opacity=".7"/>
+        <!-- coastline / Benghazi shore -->
+        <path d="M0 0 L470 0 L470 96 Q380 78 300 92 Q220 108 150 92 Q70 76 0 104 Z" fill="#e8d9b0"/>
+        <path d="M0 104 Q70 76 150 92 Q220 108 300 92 Q380 78 470 96" fill="none" stroke="#8a7a4d" stroke-width="3"/>
+        <!-- warship -->
+        <g>
+          <path d="M150 138 L330 138 L312 168 L168 168 Z" fill="#3a3f44"/>
+          <rect x="205" y="112" width="70" height="26" fill="#4a5058"/>
+          <rect x="232" y="92" width="10" height="20" fill="#4a5058"/>
+          <circle cx="237" cy="88" r="5" fill="#c0392b"/>
+          <!-- fire + smoke -->
+          <path d="M250 112 Q240 84 258 66 Q250 88 268 78 Q262 100 276 92 Q282 108 272 112 Z" fill="#ff8c1a"/>
+          <path d="M258 112 Q254 94 264 82 Q260 98 272 92 Q276 104 268 112 Z" fill="#ffd23e"/>
+          <circle cx="300" cy="66" r="16" fill="#5a5a5a" opacity=".55"/>
+          <circle cx="322" cy="48" r="20" fill="#5a5a5a" opacity=".4"/>
+          <circle cx="348" cy="30" r="24" fill="#5a5a5a" opacity=".28"/>
+        </g>
+        <!-- sea drone -->
+        <g>
+          <path d="M52 186 L118 186 L108 200 L62 200 Z" fill="#222"/>
+          <line x1="85" y1="186" x2="85" y2="172" stroke="#222" stroke-width="3"/>
+          <circle cx="85" cy="168" r="5" fill="#c0392b"/>
+          <path d="M118 193 L150 193" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/>
+        </g>
+        <!-- explosion star -->
+        <g fill="#ffd23e" stroke="#c0392b" stroke-width="2">
+          <path d="M392 118 l7 16 17-3 -9 15 13 12 -17 4 1 17 -15 -9 -11 13 -4 -17 -17 2 8 -15 -13 -11 16 -6 -2 -17 15 8 11 -14z"/>
+        </g>
+        <text x="18" y="34" font-size="15" font-weight="800" fill="#5d4037">BENGHAZI &#8212; LIBYA</text>
+        <text x="18" y="56" font-size="12" font-weight="700" fill="#5d4037">2,400 km from Ukraine</text>
+      </svg>
+      <div class="stamp">WAR AT SEA</div>
+    </div>
+    <div class="hero-txt">
+      <span class="chip war">WAR &middot; UKRAINE / LIBYA</span>
+      <h2>War spreads<br>to Libya</h2>
+      <p>Ukraine says its sea drones sank a Russian warship docked at Benghazi and hit a second vessel &mdash; the war&rsquo;s longest reach yet, 2,400&nbsp;km from home waters.</p>
+      <div class="bignum">
+        <div><b>2</b><span>SHIPS HIT</span></div>
+        <div><b>11</b><span>KILLED IN DYMER STRIKE</span></div>
+        <div><b>2,400</b><span>KM FROM UKRAINE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- second heroes -->
+  <div class="duo">
+    <div class="card">
+      <span class="chip mkt">MARKETS</span>
+      <h3>The bounce after the rout</h3>
+      <p>Wall Street futures snap back after the worst week since 2020 &mdash; but the Nasdaq has now lost all of its 2026 gains. Gold rebounds to $3,620 (+2.5%).</p>
+      <div class="nums">
+        <div><b class="up">+3.0%</b> NASDAQ FUT.</div>
+        <div><b class="up">+2.2%</b> S&amp;P FUT.</div>
+        <div><b class="down">&minus;10%</b> NASDAQ WK</div>
+      </div>
+    </div>
+    <div class="card">
+      <span class="chip pol">POLITICS &middot; USA</span>
+      <h3>Democrats&rsquo; biggest House majority in decades</h3>
+      <p>Final midterm counts hand the Democrats their widest House margin in a generation &mdash; and a mandate to check the White House.</p>
+      <div class="nums">
+        <div><b>12</b> PRIMARY DEBATES PLANNED FOR 2028</div>
+        <div>THE NEXT FIGHT STARTS NOW</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- flow strip -->
+  <div class="flow">
+    <span class="tag">HOW TODAY CONNECTS</span>
+    AI ROUT <span class="arr">&rarr;</span> FRI: NASDAQ &minus;5.3% <span class="arr">&rarr;</span> MON: FUTURES +3%
+    <span style="color:#8d6e00">&nbsp;&bull;&nbsp;</span>
+    LIBYA STRIKE <span class="arr">&rarr;</span> SHARARA FIELD SHUT <span class="arr">&rarr;</span> BRENT $90
+  </div>
+
+  <!-- mid stories -->
+  <div class="mid">
+    <div class="midcard">
+      <span class="ico">&#128165;</span> <span class="chip war">WAR</span>
+      <h4>Russian strikes kill 11 in Kyiv region</h4>
+      <p>Overnight missiles hit homes outside the capital as the air war grinds on into a fourth winter.</p>
+    </div>
+    <div class="midcard">
+      <span class="ico">&#128269;</span> <span class="chip pol">EUROPE</span>
+      <h4>Denmark: Russia plotted to kill a rapper</h4>
+      <p>Copenhagen accuses Russian intelligence of planning to murder a Ukrainian-American rapper at a concert.</p>
+    </div>
+    <div class="midcard">
+      <span class="ico">&#128640;</span> <span class="chip sci">SPACE</span>
+      <h4>Europe &amp; Japan reach Mercury</h4>
+      <p>BepiColombo&rsquo;s two probes slip into orbit around Mercury &mdash; a decade-long journey ends in success.</p>
+    </div>
+  </div>
+
+  <!-- atlas map -->
+  <div class="atlas">
+    <div class="ttl">WHERE TODAY HAPPENED &mdash; ATLAS OF 23 NOVEMBER</div>
+    <svg width="976" height="124" viewBox="0 0 976 124">
+      <!-- simplified continents -->
+      <g fill="#f2e3b8" stroke="#8a7a4d" stroke-width="1.6">
+        <path d="M25 40 L80 25 L125 32 L140 50 L115 68 L100 90 L72 84 L50 95 L34 72 L18 56 Z"/>
+        <path d="M100 102 L132 98 L142 120 L124 128 L106 124 Z"/>
+        <path d="M462 32 L510 24 L538 36 L526 56 L492 60 L468 48 Z"/>
+        <path d="M470 66 L540 62 L566 78 L556 108 L520 122 L486 106 L472 84 Z"/>
+        <path d="M540 30 L640 22 L740 28 L820 40 L850 62 L820 86 L740 94 L660 88 L570 74 L544 52 Z"/>
+        <path d="M838 100 L886 94 L904 110 L880 126 L846 118 Z"/>
+      </g>
+      <!-- leader lines -->
+      <g stroke="#16130e" stroke-width="1" opacity=".65">
+        <line x1="100" y1="62" x2="92" y2="104"/>
+        <line x1="495" y1="32" x2="458" y2="28"/>
+        <line x1="530" y1="44" x2="540" y2="38"/>
+        <line x1="548" y1="70" x2="560" y2="66"/>
+        <line x1="560" y1="95" x2="572" y2="108"/>
+      </g>
+      <!-- dots + labels -->
+      <g>
+        <circle cx="100" cy="62" r="5" fill="#c0392b"/>
+        <text x="10" y="106" class="dotlbl">MEXICO CITY</text>
+        <text x="10" y="118" class="dotlbl2">49ers 35&#8211;10 Vikings</text>
+        <circle cx="148" cy="48" r="5" fill="#6a1b9a"/>
+        <text x="158" y="42" class="dotlbl">WASHINGTON</text>
+        <text x="158" y="54" class="dotlbl2">big House majority</text>
+        <circle cx="495" cy="32" r="5" fill="#6a1b9a"/>
+        <text x="372" y="24" class="dotlbl">COPENHAGEN</text>
+        <text x="372" y="36" class="dotlbl2">assassination plot</text>
+        <circle cx="530" cy="44" r="5" fill="#c0392b"/>
+        <text x="542" y="36" class="dotlbl">KYIV</text>
+        <text x="542" y="48" class="dotlbl2">11 killed</text>
+        <circle cx="548" cy="70" r="6" fill="#c0392b"/>
+        <text x="562" y="64" class="dotlbl">BENGHAZI</text>
+        <text x="562" y="76" class="dotlbl2">warship sunk</text>
+        <circle cx="560" cy="95" r="5" fill="#e65100"/>
+        <text x="574" y="104" class="dotlbl">KHARTOUM</text>
+        <text x="574" y="116" class="dotlbl2">UN building hit</text>
+        <circle cx="745" cy="50" r="5" fill="#6a1b9a"/>
+        <text x="712" y="32" class="dotlbl">SEOUL</text>
+        <text x="712" y="44" class="dotlbl2">minister quits</text>
+        <circle cx="802" cy="50" r="5" fill="#00695c"/>
+        <text x="812" y="44" class="dotlbl">TOKYO</text>
+        <text x="812" y="56" class="dotlbl2">Mt Fuji warning</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- briefs -->
+  <div class="briefs">
+    <div class="bhead"><b>ALSO TODAY &mdash; 24 BRIEFS FROM EVERY REGION</b>
+      <span class="legend"><i style="background:#c0392b"></i>War <i style="background:#2e7d32"></i>Climate <i style="background:#1565c0"></i>Markets <i style="background:#6a1b9a"></i>Politics <i style="background:#e65100"></i>Disaster <i style="background:#00695c"></i>Science <i style="background:#5d4037"></i>Sport</span>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <div class="item"><span class="dot" style="background:#c0392b"></span><span><b>Trump &ldquo;inclined&rdquo; to hit Iran</b> again if no deal by New Year</span></div>
+        <div class="item"><span class="dot" style="background:#2e7d32"></span><span><b>COP31 flop backlash:</b> Pacific nations voice despair; Australia pressed</span></div>
+        <div class="item"><span class="dot" style="background:#e65100"></span><span><b>Indonesia candy factory fire:</b> more remains found; 34 missing</span></div>
+        <div class="item"><span class="dot" style="background:#6a1b9a"></span><span><b>Netanyahu&ndash;Eisenkot talks end</b> with no deal on an Israel government</span></div>
+        <div class="item"><span class="dot" style="background:#6a1b9a"></span><span><b>South Korea names</b> new foreign, unification ministers</span></div>
+        <div class="item"><span class="dot" style="background:#1565c0"></span><span><b>Citi&rsquo;s $35bn UK error</b> may stall its US penalty-box exit</span></div>
+        <div class="item"><span class="dot" style="background:#00695c"></span><span><b>US banks tighten controls</b> on AI agents</span></div>
+        <div class="item"><span class="dot" style="background:#5d4037"></span><span><b>Skubal&rsquo;s $450m Mets deal:</b> record 9-year contract</span></div>
+      </div>
+      <div class="col">
+        <div class="item"><span class="dot" style="background:#c0392b"></span><span><b>NATO: Russia ready</b> to launch a nuclear-armed satellite</span></div>
+        <div class="item"><span class="dot" style="background:#6a1b9a"></span><span><b>China warns citizens off Mt Fuji</b> after $75,000 reward</span></div>
+        <div class="item"><span class="dot" style="background:#e65100"></span><span><b>450 German schools</b> get bomb threats by email</span></div>
+        <div class="item"><span class="dot" style="background:#6a1b9a"></span><span><b>Switzerland votes</b> on weapons, neutrality soul-search</span></div>
+        <div class="item"><span class="dot" style="background:#1565c0"></span><span><b>Nvidia in the dock:</b> US queries chip sales to China</span></div>
+        <div class="item"><span class="dot" style="background:#c0392b"></span><span><b>Sudan drones hit homes</b> and a UN building in Khartoum</span></div>
+        <div class="item"><span class="dot" style="background:#e65100"></span><span><b>South Sudan attack</b> leaves 24 civilians dead</span></div>
+        <div class="item"><span class="dot" style="background:#5d4037"></span><span><b>Shuri Castle&rsquo;s restored hall</b> opens to the public in Okinawa</span></div>
+      </div>
+      <div class="col">
+        <div class="item"><span class="dot" style="background:#6a1b9a"></span><span><b>Kim Jong Un:</b> North Korea seeks security, not supremacy</span></div>
+        <div class="item"><span class="dot" style="background:#1565c0"></span><span><b>Goldman sees gold at $4,650</b> by 2027 as central banks buy</span></div>
+        <div class="item"><span class="dot" style="background:#e65100"></span><span><b>Delta glitch delays flights</b> ahead of Thanksgiving</span></div>
+        <div class="item"><span class="dot" style="background:#6a1b9a"></span><span><b>US farm dept &amp; FBI breached</b> by hackers</span></div>
+        <div class="item"><span class="dot" style="background:#00695c"></span><span><b>Thailand to ban chemical exports</b> in pollution crackdown</span></div>
+        <div class="item"><span class="dot" style="background:#e65100"></span><span><b>WHO: Congo Ebola response</b> hit by nearby fighting</span></div>
+        <div class="item"><span class="dot" style="background:#5d4037"></span><span><b>Paolo Bulgari dies at 89;</b> Tom Jackson dies at 75</span></div>
+        <div class="item"><span class="dot" style="background:#5d4037"></span><span><b>NFL in Mexico:</b> 49ers rout Vikings 35&ndash;10</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>ALL 30 STORIES FIRST REPORTED MONDAY 23 NOVEMBER 2026 &middot; SOURCES: REUTERS, AP, BLOOMBERG, SCMP, JAPAN TIMES</span><span>THE WORLD IN ONE PICTURE</span></div>
+</div>
+</body>
+</html>
